@@ -23,19 +23,19 @@ public class AltoVoice extends SuperClass
             String note = blankNote + "4" + "q ";
             fullAltoNotes.add(note);
           }
-          else if(randomNumber == 1)
+          else //if(randomNumber == 1)
           {
             String note = blankNote + "5" + "q ";
             fullAltoNotes.add(note);
           }
         }
-        else if(fullSopranoNote.contains("4") == true)
+        else //if(fullSopranoNote.contains("4") == true)
         {
           String note = blankNote + "4" + "q ";
           fullAltoNotes.add(note);
         }
       }
-      else if(blankNote == "G" || blankNote == "A" || blankNote == "B")
+      else //if(blankNote == "G" || blankNote == "A" || blankNote == "B")
       {
         int randomNumber = (int)(Math.random() * 2); //creates randomNumber between 1 or 0
         if(randomNumber == 0)
@@ -43,14 +43,14 @@ public class AltoVoice extends SuperClass
           String note = blankNote + "3" + "q ";
           fullAltoNotes.add(note);
         }
-        else if(randomNumber == 1)
+        else //if(randomNumber == 1)
         {
           String note = blankNote + "4" + "q ";
           fullAltoNotes.add(note);
         }
       }
     }
-    else if(indexNumber > 0)
+    else //if(indexNumber > 0)
     {
       int lastIndex = indexNumber - 1;
       String lastFullAltoNote = fullAltoNotes.get(lastIndex);
@@ -93,7 +93,7 @@ public class AltoVoice extends SuperClass
           }
         }
       }
-      else if(lastFullAltoNote.contains("5") == true)
+      else //if(lastFullAltoNote.contains("5") == true)
       {
         if(blankNote == "C" || blankNote == "D")
         {
@@ -114,9 +114,14 @@ public class AltoVoice extends SuperClass
     for(int i = 0; i < totalNumOfChords - 2; i++) //-2 because of index not chordNumber
     {
       int chordNumber = i + 1;
+      System.out.println("ChordNumber is: " + chordNumber);
       AvailibleNotes.findAndChooseNoteForAlto(chordNumber);
       String blankNote = altoNotes.get(i);
       addAltoOctave(blankNote, i);
     }
+    System.out.println("Soprano Voice: " + fullSopranoNotes);
+    System.out.println("Alto Voice:    " + fullAltoNotes);
+    System.out.println("Bass Voice:    " + fullBassNotes);
+
   }
 }
