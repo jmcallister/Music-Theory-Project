@@ -33,14 +33,11 @@ public class AvailibleNotes extends SuperClass
     System.out.println("The root of the chord is: " + rootOfChord);
     for(int i = 0; i < (RootToNumeral.findRomanNumeral(rootOfChord).size()); i++)
       {
-        String noteToAdd = 
+        String noteToAdd = RootToNumeral.findRomanNumeral(rootOfChord).get(i);
+        availibleNotesForAlto.add(noteToAdd);
       }
-    availibleNotesForAlto = RootToNumeral.findRomanNumeral(rootOfChord);
-    System.out.println("Total Note Options for alto: " + availibleNotesForAlto);
     int indexNumber = chordNumber - 1;
-    System.out.println("Soprano Note that has been used: " + sopranoNotes.get(indexNumber));
     availibleNotesForAlto.remove(sopranoNotes.get(indexNumber));
-    System.out.println("Note options after soprano is removed: " + availibleNotesForAlto);
     String noteForAlto = chooseNoteOfArray(availibleNotesForAlto);
     altoNotes.add(noteForAlto);
   }
